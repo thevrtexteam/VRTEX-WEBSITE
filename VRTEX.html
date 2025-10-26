@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VRTEX | Official Website</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Exo+2:wght@400;600;800&display=swap');
+    * {margin:0; padding:0; box-sizing:border-box; font-family: 'Exo 2', sans-serif;}
+    html {scroll-behavior: smooth;}
+    body {
+      background: radial-gradient(circle at top, #020202, #000);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: rgba(10,10,10,0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #00ffff33;
+      z-index: 10;
+      animation: fadeInDown 1s ease;
+    }
+    .logo {font-size: 30px; font-weight: 800; color: #00ffff; text-shadow: 0 0 10px #00ffff;}
+    nav a {
+      margin: 0 18px; color: #fff; text-decoration: none; font-weight: 500; transition: 0.3s;
+    }
+    nav a:hover {color: #00ffff; text-shadow: 0 0 10px #00ffff;}
+
+    .hero {
+      text-align: center;
+      padding: 160px 20px 120px;
+      background: radial-gradient(circle at top, #001a1a, #000);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before, .hero::after {
+      content: '';
+      position: absolute;
+      width: 300px; height: 300px;
+      background: #00ffff33;
+      filter: blur(200px);
+      animation: float 6s infinite alternate ease-in-out;
+    }
+    .hero::before {top: 100px; left: -100px;}
+    .hero::after {bottom: 100px; right: -100px;}
+    .hero h1 {font-size: 70px; color: #00ffff; text-shadow: 0 0 20px #00ffff; animation: fadeInUp 1.2s ease;}
+    .hero p {font-size: 22px; color: #ccc; margin: 15px 0; animation: fadeInUp 1.5s ease;}
+    .btn {
+      display: inline-block;
+      padding: 14px 34px;
+      margin: 12px;
+      border-radius: 30px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      background: linear-gradient(90deg, #00ffff, #0088ff);
+      box-shadow: 0 0 15px #00ffff55;
+      transition: 0.3s;
+      animation: fadeInUp 1.8s ease;
+    }
+    .btn:hover {transform: scale(1.05); box-shadow: 0 0 30px #00ffffaa;}
+
+    section h2 {
+      text-align: center;
+      font-size: 38px;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+
+    .bots {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      padding: 100px 60px;
+      animation: fadeIn 2s ease;
+    }
+    .bot-card {
+      background: rgba(10,10,10,0.9);
+      padding: 30px;
+      border-radius: 20px;
+      width: 280px;
+      text-align: center;
+      border: 1px solid #00ffff33;
+      box-shadow: 0 0 20px #00ffff22;
+      transition: 0.4s;
+    }
+    .bot-card:hover {transform: translateY(-8px); box-shadow: 0 0 40px #00ffff55;}
+    .bot-card h3 {color: #00ffff; margin-bottom: 12px; font-size: 22px;}
+    .bot-card p {color: #ccc; font-size: 15px;}
+
+    .premium {padding: 100px 40px; text-align: center; background: linear-gradient(180deg, #000, #001a1a);}
+    .pricing {display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; margin-top: 50px;}
+    .plan {
+      background: rgba(15,15,15,0.9);
+      border-radius: 20px;
+      padding: 40px 50px;
+      width: 280px;
+      box-shadow: 0 0 25px #00ffff33;
+      border: 1px solid #00ffff55;
+      transition: 0.4s;
+    }
+    .plan:hover {transform: translateY(-10px); box-shadow: 0 0 60px #00ffff88;}
+    .plan h3 {color: #00ffff; font-size: 28px; margin-bottom: 15px;}
+    .plan p {color:#ccc;}
+    .plan .btn {margin-top: 20px;}
+
+    .compare {
+      display: none;
+      padding: 80px 40px;
+      animation: fadeIn 1s ease;
+    }
+    .compare.active {display: block;}
+    table {margin:40px auto;border-collapse:collapse;width:80%;max-width:800px;}
+    th,td {border:1px solid #00ffff55;padding:14px;}
+    th {background:#00ffff22;}
+    tr:hover {background:#001a1a;}
+
+    .about {padding: 100px 60px; text-align: center; background: #000; animation: fadeIn 1.5s ease;}
+    .about p {max-width: 700px; margin: 20px auto; color: #ccc; font-size: 17px; line-height: 1.6;}
+
+    .contact {padding: 80px 40px; background: linear-gradient(180deg, #001a1a, #000); text-align: center;}
+
+    footer {background: #0a0a0a; text-align: center; padding: 20px; color: #888; border-top: 1px solid #00ffff33;}
+
+    @keyframes fadeIn {from{opacity:0}to{opacity:1}}
+    @keyframes fadeInUp {from{opacity:0; transform:translateY(30px)}to{opacity:1; transform:translateY(0)}}
+    @keyframes fadeInDown {from{opacity:0; transform:translateY(-30px)}to{opacity:1; transform:translateY(0)}}
+    @keyframes float {from{transform:translateY(0)}to{transform:translateY(30px)}}
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <!-- logo goes here -->
+      VRTEX
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#bots">Our Bots</a>
+      <a href="#premium">Premium</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <h1>Welcome to VRTEX</h1>
+    <p>Fast • Secure • Scalable — Discord’s Future, Today.</p>
+    <a href="https://discord.com/invite/PqNk8qWMK6" class="btn">Join Our Server</a>
+    <a href="https://www.youtube.com/channel/UCYhCGwWLY76QofDl_r6Bljg" class="btn">Watch on YouTube</a>
+  </section>
+
+  <section id="bots">
+    <h2>Our Bots</h2>
+    <div class="bots">
+      <div class="bot-card">
+        <h3>VRTEX ECONOMY</h3>
+        <p>The ultimate Discord economy bot — jobs, shops, XP, and more.</p>
+        <a href="https://discord.com/oauth2/authorize?client_id=1426165017715277824" class="btn">Invite</a>
+        <a href="commands.html" class="btn">Commands</a>
+      </div>
+      <div class="bot-card"><h3>VRTEX SECURITY</h3><p><i>In production — releasing soon!</i></p></div>
+      <div class="bot-card"><h3>VRTEX MODERATION</h3><p><i>In production — releasing soon!</i></p></div>
+      <div class="bot-card"><h3>VRTEX GAMES</h3><p><i>In production — releasing soon!</i></p></div>
+    </div>
+  </section>
+
+  <section id="premium" class="premium">
+    <h2>VRTEX+ Premium</h2>
+    <p>Unlock exclusive customization, advanced features, and more power.</p>
+    <div class="pricing">
+      <div class="plan">
+        <h3>$2 / Month</h3>
+        <p>Access premium-only features and advanced editing options.</p>
+        <a href="#compare" class="btn" onclick="showCompare()">Get Monthly</a>
+      </div>
+      <div class="plan">
+        <h3>$22 / Year</h3>
+        <p>Save more and enjoy VRTEX+ all year long.</p>
+        <a href="#compare" class="btn" onclick="showCompare()">Get Yearly</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="compare" class="compare">
+    <h2>VRTEX+ vs Normal</h2>
+    <table>
+      <tr><th>Feature</th><th>Normal</th><th>VRTEX+</th></tr>
+      <tr><td>Daily Rewards</td><td>3000 coins</td><td>4000 coins</td></tr>
+      <tr><td>Vote Bonus</td><td>2000 coins</td><td>3000 coins</td></tr>
+      <tr><td>Cooldown Reduction</td><td>None</td><td>-20%</td></tr>
+      <tr><td>Business Tiers</td><td>1-2</td><td>3-5</td></tr>
+      <tr><td>Customization Options</td><td>Basic</td><td>Advanced</td></tr>
+      <tr><td>Exclusive Crates</td><td>❌</td><td>✅</td></tr>
+      <tr><td>Server Prefix Change</td><td>❌</td><td>✅</td></tr>
+    </table>
+    <a href="#" class="btn">Proceed to Payment</a>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About VRTEX</h2>
+    <p>We’re a passionate development team creating the VRTEX line of Discord bots — designed for speed, power, and style. From economy to moderation, our mission is to make your Discord experience effortless, efficient, and fun.</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Join our community or reach out directly!</p>
+    <a href="https://discord.com/invite/PqNk8qWMK6" class="btn">Join Discord</a>
+    <a href="mailto:thevrtexteam@gmail.com" class="btn">Email Us</a>
+  </section>
+
+  <footer>
+    By VRTEX Team
+  </footer>
+
+  <script>
+    function showCompare() {
+      document.getElementById('compare').classList.add('active');
+      window.location.hash = 'compare';
+    }
+  </script>
+</body>
+</html>

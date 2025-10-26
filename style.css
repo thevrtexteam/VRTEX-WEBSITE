@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Exo+2:wght@400;600;800&display=swap');
+* {margin:0; padding:0; box-sizing:border-box; font-family: 'Exo 2', sans-serif;}
+body {background:#000; color:#fff;}
+header {
+  background:rgba(10,10,10,0.9); backdrop-filter:blur(10px);
+  display:flex; justify-content:space-between; align-items:center;
+  padding:20px 60px; border-bottom:1px solid #00ffff33; position:sticky; top:0;
+}
+.logo {font-size:30px; font-weight:800; color:#00ffff; text-shadow:0 0 10px #00ffff;}
+nav a {margin:0 15px; color:#fff; text-decoration:none; transition:0.3s;}
+nav a:hover {color:#00ffff; text-shadow:0 0 10px #00ffff;}
+.hero.small {text-align:center; padding:100px 20px; background:radial-gradient(circle at top, #001a1a, #000);}
+table {width:80%; margin:50px auto; border-collapse:collapse; color:#fff;}
+th,td {border:1px solid #00ffff55; padding:12px;}
+th {background:#00ffff22;}
+tr:hover {background:#001a1a;}
+.btn {display:inline-block; padding:12px 25px; border-radius:30px; background:linear-gradient(90deg,#00ffff,#0088ff); text-decoration:none; color:#fff; font-weight:600; margin:20px;}
+.btn:hover {transform:scale(1.05); box-shadow:0 0 30px #00ffffaa;}
+footer {text-align:center; padding:20px; border-top:1px solid #00ffff33; color:#888;}
